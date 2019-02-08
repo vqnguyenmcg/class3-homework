@@ -1,0 +1,3 @@
+Docker vs Singuarity: With Docker, we benefit a community with a central deposit of more than 100000 images. 
+However, Docker requires root access (and hence, yields security concerns) but it does not support GPU access as well as Infiniband access and network sharing and hence, it is not convenient for the high performance computing. 
+Singularity, on one and, overcomes the above limitations of Docker and, on the other hand, still allows to access Docker's hub to create images.
