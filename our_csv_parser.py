@@ -11,6 +11,7 @@ myfilename = "housing.data.txt"
 # else:
 #   print ('boo, no files for me')
 new_lists = []
+print('PART 1')
 with open(myfilename, 'r') as file_handle:
     for line in file_handle.readlines():
         line_clean = line.replace('   ', ' ').replace('  ', ' ')
@@ -21,10 +22,11 @@ with open(myfilename, 'r') as file_handle:
         casted_lines = []
         for value in values:
             # for homework:
-            # print('the type of {0} is {1} '.format(value, type(value)))
             if '.' not in value:
+                print('{0} will be casted to integer'.format(type(value)))
                 value = int(value)
             else:
+                print('{0} will be casted to float'.format(type(value)))
                 value = float(value)
             casted_lines.append(value)
             # identify what type of data each value is, and cast it
@@ -38,6 +40,7 @@ with open(myfilename, 'r') as file_handle:
 
    # part 2 of homework
         new_lists.append(casted_lines)
+    print('PART 2')
     num_of_cols = len(new_lists[0])
     columns =[]
     for i in range(num_of_cols):
@@ -45,5 +48,11 @@ with open(myfilename, 'r') as file_handle:
         for row in new_lists:
             col_i.append(row[i])
         columns.append(col_i)
-        print('column {0} is {1}'.format(i, columns[i]))
+
+    # display on screen
+    for i in range(num_of_cols):
+        # to view better, print 10 first values of each column:
+        print('column {0} is {1}'.format(i+1, columns[i][0:10]))
+        # print whole columns
+        # print('column {0} is {1}'.format(i + 1, columns[i]))
     print('finished!')
